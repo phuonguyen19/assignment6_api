@@ -14,7 +14,7 @@ const app = express()
 
 app.use(express.json())
 
-// Swagger UI tại http://localhost:3000/doc
+// Swagger UI at http://localhost:3000/doc
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use('/', indexRouter)
