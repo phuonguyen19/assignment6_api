@@ -1,0 +1,46 @@
+@apiserver = http://localhost:3000/doc
+@todoId = 7ba70388-2eca-427d-b5d9-8a4670b57f04
+
+### GET /todos => 200
+GET {{apiserver}}/todos
+
+### GET /todos?state=todo => 200
+GET {{apiserver}}/todos?state=todo
+
+### GET /todos/:id (non-existent) => 404
+GET {{apiserver}}/todos/1010
+
+### POST /todos (valid) => 201
+POST {{apiserver}}/todos
+Content-Type: application/json
+
+{
+    "title": "Finish the weekly assignment",
+    "description": "The current assignment is nr 4",
+    "state": "todo"
+}
+
+### POST /todos (missing title) => 400
+POST {{apiserver}}/todos
+Content-Type: application/json
+
+{
+    "description": "Missing title should fail validation",
+    "state": "todo"
+}
+
+### POST /todos (malformed JSON) => 400
+POST {{apiserver}}/todos
+Content-Type: application/json
+
+    "title": "Finish the weekly assignment",
+    "description": "The current assignment is nr 4",
+    "state": "todo"
+
+### PUT /todos/:id (valid update) => 200 or 404
+PUT {{apiserver}}/todos/{{todoId}}
+Content-Type: application/json
+
+{
+    "state": "done"
+}
