@@ -4,7 +4,7 @@ A Node.js and Express REST API for managing todo items and users, documented wit
 ## Project Structure
 
 ```text
-assignment4/
+assignment6/
 ├── src/
 │   ├── routes/
 │   │   ├── index.js
