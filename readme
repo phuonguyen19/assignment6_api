@@ -9,7 +9,7 @@ assignment6/
 │   ├── routes/
 │   │   ├── index.js
 │   │   ├── todo.js
-│   │   └── users.js
+│   │   └── user.js
 │   ├── services/
 │   │   ├── todos.js
 │   │   └── users.js
